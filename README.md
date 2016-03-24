@@ -4,7 +4,7 @@
 This script adds flag icons to Wikipedia languages list.
 
 ### Screenshot
-TODO.
+![Screenshot](https://raw.githubusercontent.com/DavideViolante/Wikipedia-Flag-Icons/master/screenshot.png)
 
 ### Installation
 ##### Chrome
