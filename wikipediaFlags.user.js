@@ -24,7 +24,7 @@
 						"hi", "ca", "simple", "eo"];
 
 	var flagLangCode = {
-		en: "gb", de: "de", es: "es", fr: "fr", it: "it", nl: "nl", ja: "jp", pl: "pl", ru: "ru", sv: "se",
+		en: "usgb", de: "de", es: "es", fr: "fr", it: "it", nl: "nl", ja: "jp", pl: "pl", ru: "ru", sv: "se",
 		vi: "vn", id: "id", ms: "my", cs: "cz", ko: "kr", hu: "hu", no: "no", pt: "pt", ro: "ro", sr: "rs",
 		fi: "fi", tr: "tr", uk: "ua", zh: "cn", bs: "ba", bg: "bg", da: "dk", et: "ee", el: "gr", he: "il",
 		hr: "hr", lv: "lv", lt: "lt", nn: "no", sk: "sk", sl: "si", th: "th",
@@ -38,8 +38,6 @@
 			langClass.insertBefore(element, langClass.firstChild);
 			element.innerHTML = '<img src="https://raw.githubusercontent.com/DavideViolante/Wikipedia-Flag-Icons/master/flags/'+flagLangCode[wikiLangCode[i]]+'.png"> ';
 		}
-		
 	}
 	
-
 })();
