@@ -1,10 +1,10 @@
 // @name            Wikipedia Flag Icons
 // @description     This script adds flag icons to Wikipedia languages list.
 // @icon            http://en.wikipedia.org/favicon.ico
-// @version         2015.03.24 (0.1)
+// @version         2015.03.24 (0.2)
 // @namespace       wikilangflags
 // @author          https://github.com/davideviolante/
-// @downloadURL     https://github.com/davideviolante/
+// @downloadURL     https://github.com/DavideViolante/Wikipedia-Flag-Icons/raw/master/wikipediaFlags.user.js
 // @grant           none
 // @include         http*://*.wikipedia.org/wiki/*
 // @include         http*://*.wiktionary.org/wiki/*
@@ -18,11 +18,6 @@
 
 (function(){
 
-	var wikiLangCode = ["en", "de", "es", "fr", "it", "nl", "ja", "pl", "ru", "sv", "vi", "id", "ms",
-						"cs", "ko", "hu", "no", "pt", "ro", "sr", "fi", "tr", "uk", "zh", "bs", "bg",
-						"da", "et", "el", "he", "hr", "lv", "lt", "nn", "sk", "sl", "th",
-						"hi", "ca", "simple", "eo"];
-
 	var flagLangCode = {
 		en: "usgb", de: "de", es: "es", fr: "fr", it: "it", nl: "nl", ja: "jp", pl: "pl", ru: "ru", sv: "se",
 		vi: "vn", id: "id", ms: "my", cs: "cz", ko: "kr", hu: "hu", no: "no", pt: "pt", ro: "ro", sr: "rs",
@@ -31,12 +26,12 @@
 		hi: "in", ca: "catalonia", simple: "gb", eo: "eo"
 	};
 
-	for(var i=0; i<wikiLangCode.length; i++) {
+	for(var prop in flagLangCode) {
 		var element = document.createElement("span");
-		var langClass = document.getElementsByClassName("interlanguage-link interwiki-"+wikiLangCode[i])[0];
+		var langClass = document.getElementsByClassName("interlanguage-link interwiki-"+prop)[0];
 		if(langClass) {
 			langClass.insertBefore(element, langClass.firstChild);
-			element.innerHTML = '<img src="https://raw.githubusercontent.com/DavideViolante/Wikipedia-Flag-Icons/master/flags/'+flagLangCode[wikiLangCode[i]]+'.png"> ';
+			element.innerHTML = '<img src="https://raw.githubusercontent.com/DavideViolante/Wikipedia-Flag-Icons/master/flags/'+flagLangCode[prop]+'.png"> ';
 		}
 	}
 	
