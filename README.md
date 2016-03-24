@@ -4,7 +4,7 @@
 This script adds flag icons to Wikipedia languages list.
 
 ### Screenshot
-![Screenshot](https://raw.githubusercontent.com/DavideViolante/Wikipedia-Flag-Icons/master/screenshot.png)
+[![Screenshot](https://raw.githubusercontent.com/DavideViolante/Wikipedia-Flag-Icons/master/screenshot.png)](#)
 
 ### Installation
 ##### Chrome
@@ -16,4 +16,4 @@ This script adds flag icons to Wikipedia languages list.
 2. Add my `wikipediaFlags.user.js`
 
 ### License
-![CC-BY-NC](http://i.creativecommons.org/l/by-nc/3.0/88x31.png)
+[![CC-BY-NC](http://i.creativecommons.org/l/by-nc/3.0/88x31.png)](https://en.wikipedia.org/wiki/Creative_Commons_license)
