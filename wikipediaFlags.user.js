@@ -1,3 +1,4 @@
+// ==UserScript==
 // @name            Wikipedia Flag Icons
 // @description     This script adds flag icons to Wikipedia languages list.
 // @icon            http://en.wikipedia.org/favicon.ico
@@ -13,6 +14,7 @@
 // @include         http*://*.wikibooks.org/wiki/*
 // @include         http*://*.wikiquote.org/wiki/*
 // @include         http*://*.wikinews.org/wiki/*
+// ==/UserScript==
 
 // Flag icons by http://www.famfamfam.com/lab/icons/flags/
 
