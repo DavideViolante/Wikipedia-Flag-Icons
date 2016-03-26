@@ -1,19 +1,22 @@
 // ==UserScript==
 // @name            Wikipedia Flag Icons
-// @description     This script adds flag icons to Wikipedia languages list.
+// @description     Display flag icons to Wikipedia languages list on left sidebar.
 // @icon            http://en.wikipedia.org/favicon.ico
-// @version         2015.03.24 (0.2)
-// @namespace       wikilangflags
-// @author          https://github.com/davideviolante/
-// @downloadURL     https://github.com/DavideViolante/Wikipedia-Flag-Icons/raw/master/wikipediaFlags.user.js
+// @version         2015.03.26 (1.0)
+// @namespace       wikiflagicons
+// @author          https://github.com/DavideViolante/
+// @downloadURL     https://github.com/DavideViolante/Wikipedia-Flag-Icons/raw/master/Userscript/wikipediaFlags.user.js
 // @grant           none
 // @include         http*://*.wikipedia.org/wiki/*
+// @include         http*://*.wikimedia.org/*
 // @include         http*://*.wiktionary.org/wiki/*
-// @include         http*://*.wikiversity.org/wiki/*
-// @include         http*://*.wikisource.org/wiki/*
 // @include         http*://*.wikibooks.org/wiki/*
-// @include         http*://*.wikiquote.org/wiki/*
+// @include         http*://*.wikidata.org/*
 // @include         http*://*.wikinews.org/wiki/*
+// @include         http*://*.wikiquote.org/wiki/*
+// @include         http*://*.wikisource.org/wiki/*
+// @include         http*://*.wikiversity.org/wiki/*
+// @include         http*://*.wikivoyage.org/*
 // ==/UserScript==
 
 // Flag icons by http://www.famfamfam.com/lab/icons/flags/

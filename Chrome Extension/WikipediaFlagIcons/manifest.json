@@ -1,0 +1,37 @@
+{
+	"manifest_version": 2,
+
+	"name": "Wikipedia Flag Icons",
+	"description": "Display flag icons to Wikipedia languages list on left sidebar.",
+	"version": "1.0",
+	"author": "Davide Violante",
+
+	"icons": {
+		"16": "icon16.png",
+	    "48": "icon48.png",
+	    "128": "icon128.png"
+	},
+
+	"content_scripts": [
+	    {
+	    	"matches": [
+	    		"*://*.wikipedia.org/*",
+	    		"*://*.wikimedia.org/*",
+	    		"*://*.wiktionary.org/*",
+	    		"*://*.wikibooks.org/*",
+	    		"*://*.wikidata.org/*",
+	    		"*://*.wikinews.org/*",
+	    		"*://*.wikiquote.org/*",
+	    		"*://*.wikisource.org/*",
+	    		"*://*.wikiversity.org/*",
+	    		"*://*.wikivoyage.org/*"
+	    	],
+	      	"js": ["wikipediaFlagIcons.js"]
+	    }
+  	],
+
+  	"web_accessible_resources": [
+	    "flags/*.png",
+	    "wikipediaFlagIcons.js"
+  	]
+}
