@@ -12,6 +12,16 @@
 	    "128": "icon128.png"
 	},
 
+	"background": {
+		"scripts": ["bg.js"]
+	},
+	"browser_action": {
+		"default_title": ""
+	},
+	"permissions": [
+		"tabs"
+	],
+
 	"content_scripts": [
 	    {
 	    	"matches": [
@@ -29,6 +39,8 @@
 	      	"js": ["wikipediaFlagIcons.js"]
 	    }
   	],
+
+	"options_page": "options.html",
 
   	"web_accessible_resources": [
 	    "flags/*.png",

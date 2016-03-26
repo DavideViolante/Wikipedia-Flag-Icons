@@ -36,7 +36,7 @@
 		var langClass = document.getElementsByClassName("interlanguage-link interwiki-"+prop)[0];
 		if(langClass) {
 			langClass.insertBefore(element, langClass.firstChild);
-			element.innerHTML = '<img src="https://raw.githubusercontent.com/DavideViolante/Wikipedia-Flag-Icons/master/flags/'+flagLangCode[prop]+'.png"> ';
+			element.innerHTML = '<img src="https://github.com/DavideViolante/Wikipedia-Flag-Icons/blob/master/Chrome%20Extension/WikipediaFlagIcons/flags/'+flagLangCode[prop]+'.png"> ';
 		}
 	}
 	
