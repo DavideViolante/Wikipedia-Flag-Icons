@@ -21,7 +21,7 @@ Wikipedia [main page (en)](https://en.wikipedia.org/wiki/Main_Page) using the sc
 Feel free to improve this script in any way.
 
 ### Suggestions & Issues
-Use [this link](https://github.com/DavideViolante/Wikipedia-Flag-Icons/issues) to send me suggestions or issues.
+Use [GitHub issues](https://github.com/DavideViolante/Wikipedia-Flag-Icons/issues) to send me suggestions or issues.
 
 ### Support me :)
 [![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=M3EYKSBP7755A)
