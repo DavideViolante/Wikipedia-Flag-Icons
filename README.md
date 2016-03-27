@@ -8,6 +8,18 @@ Wikipedia [main page (en)](https://en.wikipedia.org/wiki/Main_Page) using the sc
 
 [![Screenshot](screenshot.png)](#)
 
+### List of wikis where it works:
+* wikipedia.org
+* wikimedia.org
+* wiktionary.org
+* wikibooks.org
+* wikidata.org
+* wikinews.org
+* wikiquote.org
+* wikisource.org
+* wikiversity.org
+* wikivoyage.org
+
 ### Installation
 ##### Google Chrome (extension)
 1. Download and install the extension from here (link to add yet).
