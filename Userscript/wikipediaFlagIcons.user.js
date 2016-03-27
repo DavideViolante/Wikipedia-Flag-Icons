@@ -7,15 +7,15 @@
 // @author          https://github.com/DavideViolante/
 // @downloadURL     https://github.com/DavideViolante/Wikipedia-Flag-Icons/raw/master/Userscript/wikipediaFlags.user.js
 // @grant           none
-// @include         http*://*.wikipedia.org/wiki/*
+// @include         http*://*.wikipedia.org/*
 // @include         http*://*.wikimedia.org/*
-// @include         http*://*.wiktionary.org/wiki/*
-// @include         http*://*.wikibooks.org/wiki/*
+// @include         http*://*.wiktionary.org/*
+// @include         http*://*.wikibooks.org/*
 // @include         http*://*.wikidata.org/*
-// @include         http*://*.wikinews.org/wiki/*
-// @include         http*://*.wikiquote.org/wiki/*
-// @include         http*://*.wikisource.org/wiki/*
-// @include         http*://*.wikiversity.org/wiki/*
+// @include         http*://*.wikinews.org/*
+// @include         http*://*.wikiquote.org/*
+// @include         http*://*.wikisource.org/*
+// @include         http*://*.wikiversity.org/*
 // @include         http*://*.wikivoyage.org/*
 // ==/UserScript==
 
