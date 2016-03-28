@@ -8,7 +8,7 @@ Wikipedia [main page (en)](https://en.wikipedia.org/wiki/Main_Page) using the sc
 
 [![Screenshot](screenshot.png)](#)
 
-### List of wikis where it works:
+### List of wikis supported:
 * wikipedia.org
 * wikimedia.org
 * wiktionary.org
