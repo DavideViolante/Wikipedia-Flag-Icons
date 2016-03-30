@@ -1,12 +1,7 @@
 # Wikipedia Flag Icons
 
 ### Info
-This script adds 41 flag icons to Wikipedia languages list.
-
-### Screenshot
-Wikipedia [main page (en)](https://en.wikipedia.org/wiki/Main_Page) using the script:
-
-[![Screenshot](screenshot.png)](#)
+Display flag icons to Wikipedia languages list on left sidebar. See screenshot below.
 
 ### List of wikis supported:
 * wikipedia.org
@@ -19,6 +14,11 @@ Wikipedia [main page (en)](https://en.wikipedia.org/wiki/Main_Page) using the sc
 * wikisource.org
 * wikiversity.org
 * wikivoyage.org
+
+### Screenshot
+Wikipedia Main Page (EN) using the script:
+
+[![Screenshot](screenshot.png)](#)
 
 ### Installation
 ##### Google Chrome (extension)
