@@ -22,7 +22,7 @@ Wikipedia Main Page (EN) using the script:
 
 ### Installation
 ##### Google Chrome (extension)
-1. Download and install the extension from here (link to add yet).
+1. Download and install the extension from [here](https://chrome.google.com/webstore/detail/wikipedia-flag-icons/hcpffdppeejlgoaagghjfnecaofbghgp).
 
 ##### Google Chrome or Mozilla Firefox (userscript)
 1. Install [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=it) (Chrome) or [Greasemonkey](https://addons.mozilla.org/it/firefox/addon/greasemonkey/) (Firefox);
