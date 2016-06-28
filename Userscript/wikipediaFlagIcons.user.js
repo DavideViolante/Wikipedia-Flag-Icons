@@ -2,7 +2,7 @@
 // @name            Wikipedia Flag Icons
 // @description     Display flag icons to Wikipedia languages list on left sidebar.
 // @icon            http://en.wikipedia.org/favicon.ico
-// @version         2015.03.26 (1.0)
+// @version         2015.06.28 (1.1)
 // @namespace       wikiflagicons
 // @author          https://github.com/DavideViolante/
 // @downloadURL     https://github.com/DavideViolante/Wikipedia-Flag-Icons/raw/master/Userscript/wikipediaFlags.user.js
