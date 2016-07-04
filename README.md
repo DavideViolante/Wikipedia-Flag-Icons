@@ -28,6 +28,9 @@ Wikipedia Main Page (EN) using the script:
 1. Install [Greasemonkey](https://addons.mozilla.org/it/firefox/addon/greasemonkey/) (Firefox) or [Violent Monkey](https://addons.opera.com/en/extensions/details/violent-monkey/) (Opera);
 2. Download my userscript from [here](https://github.com/DavideViolante/Wikipedia-Flag-Icons/raw/master/Userscript/wikipediaFlagIcons.user.js);
 3. Drag and drop `wikipediaFlags.user.js` into your browser.
+ 
+### Issues
+Open an issue to tell me flags that are missing.
 
 ### License
 [![CC-BY-NC](http://i.creativecommons.org/l/by-nc/3.0/88x31.png)](https://en.wikipedia.org/wiki/Creative_Commons_license)
