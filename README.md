@@ -21,11 +21,11 @@ Wikipedia Main Page (EN) using the script:
 * wikivoyage.org
 
 ### Installation
-##### Google Chrome (extension)
-1. Download and install the extension from the official [Google Chrome Webstore](https://chrome.google.com/webstore/detail/wikipedia-flag-icons/hcpffdppeejlgoaagghjfnecaofbghgp).
+##### Extension (Google Chrome)
+1. Install the extension from the official [Google Chrome Webstore](https://chrome.google.com/webstore/detail/wikipedia-flag-icons/hcpffdppeejlgoaagghjfnecaofbghgp).
 
-##### Google Chrome or Mozilla Firefox (userscript)
-1. Install [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=it) (Chrome) or [Greasemonkey](https://addons.mozilla.org/it/firefox/addon/greasemonkey/) (Firefox);
+##### Userscript (Firefox & Opera)
+1. Install [Greasemonkey](https://addons.mozilla.org/it/firefox/addon/greasemonkey/) (Firefox) or [Violent Monkey](https://addons.opera.com/en/extensions/details/violent-monkey/) (Opera);
 2. Download my userscript from [here](https://github.com/DavideViolante/Wikipedia-Flag-Icons/raw/master/Userscript/wikipediaFlagIcons.user.js);
 3. Drag and drop `wikipediaFlags.user.js` into your browser.
 
