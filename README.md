@@ -2,6 +2,7 @@
 
 ### Info
 Display flag icons to Wikipedia languages list on left sidebar.
+
 New in v1.2: you can choose primary and secondary language to show near wikipedia page titles.
 
 ### Screenshot
