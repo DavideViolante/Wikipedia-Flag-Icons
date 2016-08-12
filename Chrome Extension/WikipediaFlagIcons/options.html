@@ -31,6 +31,17 @@
 		a:hover {
 			border: 0;
 		}
+		#status {
+			display: inline;
+		}
+		input, button {
+			border: 1px solid #000;
+			border-radius: 5px;
+			padding: 5px;
+		}
+		button:hover {
+			background-color: #fff;
+		}
 	</style>
 </head>
 <body>
@@ -45,7 +56,29 @@
 		</thead>
 		<tbody>
 			<tr>
-				<td colspan="2">This extension has no options (yet).</td>
+				<td>
+					<strong>Select your mother language</strong>
+					<br>(wikipedia url language code)
+					<br><img src="wikilangcode.png">
+				</td>
+				<td>
+					<input id="primaryLanguage" type="text" placeholder="e.g.: en, de, fr, it, es..." maxlength="4" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<strong>Select a secondary language</strong>
+					<br>(wikipedia url language code)
+					<br><img src="wikilangcode.png">
+				</td>
+				<td>
+					<input id="secondaryLanguage" type="text" placeholder="e.g.: en, de, fr, it, es..." maxlength="4" />
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+				  <button id="save">Save changes</button> <div id="status"></div>
+				</td>
 			</tr>
 			<tr>
 				<td><strong>Author</strong></td>
@@ -53,7 +86,7 @@
 			</tr>
 			<tr>
 				<td><strong>Version</strong></td>
-				<td>1.1</td>
+				<td>1.2</td>
 			</tr>
 			<tr>
 				<td><strong>Description</strong></td>
@@ -80,5 +113,9 @@
 				<td><img src="https://camo.githubusercontent.com/9f56e94c7a81447a416c94a3ee91764b99a07cea/687474703a2f2f692e6372656174697665636f6d6d6f6e732e6f72672f6c2f62792d6e632f332e302f38387833312e706e67"></td>
 			</tr>
 		</tbody>
+		
+
 	</table>
+
+	<script src="options.js"></script>
 </body>
