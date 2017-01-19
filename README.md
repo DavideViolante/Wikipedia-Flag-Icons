@@ -1,4 +1,4 @@
-# Wikipedia Flag Icons [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/hcpffdppeejlgoaagghjfnecaofbghgp.svg)](https://chrome.google.com/webstore/detail/wikipedia-flag-icons/hcpffdppeejlgoaagghjfnecaofbghgp) [![Donate](https://img.shields.io/badge/paypal-donate-179BD7.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=M3EYKSBP7755A) [![License](https://img.shields.io/badge/license-CC--BY--NC-brightgreen.svg)](https://en.wikipedia.org/wiki/Creative_Commons_license)
+# Wikipedia Flag Icons [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/hcpffdppeejlgoaagghjfnecaofbghgp.svg)](https://chrome.google.com/webstore/detail/wikipedia-flag-icons/hcpffdppeejlgoaagghjfnecaofbghgp) [![Donate](https://img.shields.io/badge/paypal-donate-179BD7.svg)](https://www.paypal.me/dviolante) [![License](https://img.shields.io/badge/license-CC--BY--NC-brightgreen.svg)](https://en.wikipedia.org/wiki/Creative_Commons_license)
 
 ### Info
 Display flag icons to Wikipedia languages list on left sidebar.
