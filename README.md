@@ -26,10 +26,10 @@ Wikipedia Main Page (EN) using the script:
 ##### Extension (Google Chrome)
 1. Install the extension from the official [Google Chrome Webstore](https://chrome.google.com/webstore/detail/wikipedia-flag-icons/hcpffdppeejlgoaagghjfnecaofbghgp).
 
-##### Userscript (Firefox & Opera)
-1. Install [Greasemonkey](https://addons.mozilla.org/it/firefox/addon/greasemonkey/) (Firefox) or [Violent Monkey](https://addons.opera.com/en/extensions/details/violent-monkey/) (Opera);
-2. Download my userscript from [here](https://github.com/DavideViolante/Wikipedia-Flag-Icons/raw/master/Userscript/wikipediaFlagIcons.user.js);
-3. Drag and drop `wikipediaFlags.user.js` into your browser.
+##### Userscript (Firefox, Opera, etc...)
+1. Install an extension that allows you to install userscripts (eg: Greasemonkey, Tampermonkey, Violentmonkey, etc)
+2. Download the userscript from [here](https://github.com/DavideViolante/Wikipedia-Flag-Icons/raw/master/Userscript/wikipediaFlagIcons.user.js);
+3. Drag and drop `wikipediaFlags.user.js` into your browser to install it.
  
 ### Issues
 Open an issue if more flags can be added.
