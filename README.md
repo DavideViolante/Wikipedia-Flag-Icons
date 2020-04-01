@@ -3,7 +3,7 @@
 ### Info
 Display flag icons to Wikipedia languages list on left sidebar.
 
-New in v1.2: you can choose primary and secondary language to show near wikipedia page titles.
+Display a preferred language near the title.
 
 ### Screenshot
 Wikipedia Main Page (EN) using the script:
@@ -32,7 +32,7 @@ Wikipedia Main Page (EN) using the script:
 3. Drag and drop `wikipediaFlags.user.js` into your browser.
  
 ### Issues
-Open an issue to tell me flags that are missing.
+Open an issue if more flags can be added.
 
 ### License
 [![CC-BY-NC](http://i.creativecommons.org/l/by-nc/3.0/88x31.png)](https://en.wikipedia.org/wiki/Creative_Commons_license)
