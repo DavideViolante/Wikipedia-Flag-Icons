@@ -39,23 +39,15 @@
   }
 
   // Show the current flag near the title
-  var currentLang = window.location.href.split(".")[0].substring(8);
-  var titleClass = document.getElementById("firstHeading");
-  var element2 = document.createElement("span");
-  if (titleClass) {
-    titleClass.appendChild(element2);
-    element2.innerHTML = ' <img src="' + chromeGetUrl(flagLangCode[currentLang]) + '" alt="Current" title="Current">';
+  const currentLang = currentUrl.split('.')[0].substring(8);
+  const pageTitleElem = document.getElementById('firstHeading');
+  const spanElem2 = document.createElement('span');
+  if (pageTitleElem) {
+    pageTitleElem.appendChild(spanElem2);
+    spanElem2.innerHTML = ` <img src="${chromeGetUrl(flagLangCode[currentLang])}" alt="Current language" title="Current language">`;
   }
-  chrome.storage.sync.get(['primaryLang', 'secondaryLang'], function (values) {
-    // Show the current flag near the title
-    const currentLang = currentUrl.split('.')[0].substring(8);
-    const pageTitleElem = document.getElementById('firstHeading');
-    const spanElem2 = document.createElement('span');
-    if (pageTitleElem) {
-      pageTitleElem.appendChild(spanElem2);
-      spanElem2.innerHTML = ` <img src="${chromeGetUrl(flagLangCode[currentLang])}" alt="Current language" title="Current language">`;
-    }
 
+  chrome.storage.sync.get(['primaryLang', 'secondaryLang'], function (values) {
     // Show the secondary flag with link near the title
     if (values.primaryLang !== values.secondaryLang && pageTitleElem) {
       const spanElem3 = document.createElement('span');
