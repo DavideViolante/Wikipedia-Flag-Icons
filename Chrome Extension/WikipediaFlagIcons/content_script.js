@@ -1,0 +1,69 @@
+// This extension was created with the help of Chat GPT
+const flagLangCode = {
+  en: 'gb', de: 'de', es: 'es', fr: 'fr', it: 'it', nl: 'nl', ja: 'jp', pl: 'pl', ru: 'ru', sv: 'se',
+  vi: 'vn', id: 'id', ms: 'my', cs: 'cz', ko: 'kr', hu: 'hu', no: 'no', pt: 'pt', ro: 'ro', sr: 'rs',
+  fi: 'fi', tr: 'tr', uk: 'ua', zh: 'cn', bs: 'ba', bg: 'bg', da: 'dk', et: 'ee', el: 'gr', he: 'il',
+  ge: 'ge', uz: 'uz', am: 'et', arz: 'eg', az: 'az', be: 'by', bi: 'vu', bn: 'bd', hy: 'am', is: 'is',
+  hr: 'hr', lv: 'lv', lt: 'lt', sk: 'sk', sl: 'si', th: 'th', ga: 'ie', ka: 'ge', kk: 'kz', ne: 'np',
+  kl: 'gl', km: 'kh', ky: 'kg', lb: 'lu', lo: 'la', mg: 'mg', mk: 'mk', mn: 'mn', mt: 'mt', ps: 'af',
+  rw: 'rw', si: 'lk', sm: 'ws', so: 'so', sq: 'al', tg: 'tj', tk: 'tm', ur: 'pk', uz: 'uz',
+  hi: 'in', ca: 'catalonia', eo: 'eo', sco: 'scotland', tet: 'tl'
+};
+
+// Define a function to get the flag URL based on the language code
+function getFlagUrl(langCode) {
+  return chrome.runtime.getURL(`images/flags/${flagLangCode[langCode]}.png`);
+}
+
+// Function to add the image element inside the link
+function addFlagImage(link, prop, popupMenu) {
+  if (!link.querySelector('img.flag-image')) {
+    const img = document.createElement('img');
+    img.src = getFlagUrl(prop);
+    img.alt = prop;
+    img.title = prop;
+    img.className = 'flag-image';
+    img.style.marginRight = '5px'; // Add 5px space between the image and text (adjust as needed)
+    img.style.marginLeft = '5px'; // Add 5px space between the image and text (adjust as needed)
+    if (popupMenu) {
+      const anchor = link.querySelector('a');
+      anchor.insertBefore(img, anchor.firstChild);
+    } else {
+      link.insertBefore(img, link.firstChild);
+    }
+  }
+}
+
+// Function to apply flags to the language links
+function applyFlagsToLanguageLinks(links, popupMenu) {
+  links.forEach(link => {
+    // Get the language code from the class name (e.g., 'interwiki-en' -> 'en')
+    const prop = link.className.match(/interwiki-(\w+)/)[1];
+    addFlagImage(link, prop, popupMenu);
+    // Add a flag-applied class to the link to mark that the flag has been added
+    link.classList.add('flag-applied');
+  });
+}
+
+// Find the initial language links and apply the flags
+const initialLinks = document.querySelectorAll('.interlanguage-link:not(.flag-applied)');
+applyFlagsToLanguageLinks(initialLinks);
+
+// MutationObserver to detect the appearance of the button
+const observer = new MutationObserver(mutationsList => {
+  const showMoreButton = document.querySelector('.mw-interlanguage-selector.mw-ui-button');
+  if (showMoreButton) {
+    showMoreButton.addEventListener('click', () => {
+      // Delay querying the language links to give time for them to be rendered
+      setTimeout(() => {
+        const additionalLinks = document.querySelectorAll('.interlanguage-uls-menu .interlanguage-link');
+        applyFlagsToLanguageLinks(additionalLinks, true);
+      }, 500); // Adjust the delay as needed based on the rendering time
+    });
+    // Stop observing once the button is found
+    observer.disconnect();
+  }
+});
+
+// Observe mutations in the document to detect the appearance of the button
+observer.observe(document, { childList: true, subtree: true });

@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name            Wikipedia Flag Icons
-// @description     Display flag icons to Wikipedia languages list on left sidebar.
+// @description     Display flag icons to Wikipedia languages list.
 // @icon            http://en.wikipedia.org/favicon.ico
-// @version         2020.04.01 (2.0)
+// @version         2023.07.21 (3.0)
 // @namespace       wikiflagicons
 // @author          https://github.com/DavideViolante/
 // @downloadURL     https://github.com/DavideViolante/Wikipedia-Flag-Icons/raw/master/Userscript/wikipediaFlags.user.js
@@ -27,13 +27,8 @@ const secondaryLang = 'it';
 
 const flagUrl = 'https://github.com/DavideViolante/Wikipedia-Flag-Icons/raw/master/Chrome%20Extension/WikipediaFlagIcons/flags/';
 
-function getFirstElemByClassName(className) {
-  return document.getElementsByClassName(className)[0];
-}
-
 (function () {
-
-  const currentUrl = window.location.href;
+  // This extension was created with the help of Chat GPT
   const flagLangCode = {
     en: 'gb', de: 'de', es: 'es', fr: 'fr', it: 'it', nl: 'nl', ja: 'jp', pl: 'pl', ru: 'ru', sv: 'se',
     vi: 'vn', id: 'id', ms: 'my', cs: 'cz', ko: 'kr', hu: 'hu', no: 'no', pt: 'pt', ro: 'ro', sr: 'rs',
@@ -45,45 +40,62 @@ function getFirstElemByClassName(className) {
     hi: 'in', ca: 'catalonia', eo: 'eo', sco: 'scotland', tet: 'tl'
   };
 
-  // For each language add the img element with the flag
-  for (const prop in flagLangCode) {
-    const spanElem1 = document.createElement('span');
-    const langElem = getFirstElemByClassName(`interlanguage-link interwiki-${prop}`);
-    if (langElem) {
-      langElem.insertBefore(spanElem1, langElem.firstChild);
-      spanElem1.innerHTML = `<img src="${flagUrl}${flagLangCode[prop]}.png" alt="${flagLangCode[prop]}" title="${flagLangCode[prop]}"> `;
-    }
+  // Define a function to get the flag URL based on the language code
+  function getFlagUrl(langCode) {
+    return chrome.runtime.getURL(`images/flags/${flagLangCode[langCode]}.png`);
   }
 
-  // Show the current flag near the title
-  const currentLang = currentUrl.split('.')[0].substring(8);
-  const pageTitleElem = document.getElementById('firstHeading');
-  const spanElem2 = document.createElement('span');
-  if (pageTitleElem) {
-    pageTitleElem.appendChild(spanElem2);
-    spanElem2.innerHTML = ` <img src="${flagUrl}${flagLangCode[currentLang]}.png" alt="Current language" title="Current language">`;
-  }
-
-  // Show the secondary flag with link near the title
-  if (primaryLang !== secondaryLang && pageTitleElem) {
-    const spanElem3 = document.createElement('span');
-    // Visiting primary language page
-    if (currentUrl.includes(`${primaryLang}.wikipedia`)) {
-      pageTitleElem.appendChild(spanElem3);
-      const secondaryLangElem = getFirstElemByClassName(`interlanguage-link interwiki-${secondaryLang}`);
-      if (secondaryLangElem) {
-        const { href, title } = secondaryLangElem.lastChild;
-        spanElem3.innerHTML = ` <a href="${href}"><img src="${flagUrl}${flagLangCode[secondaryLang]}.png" alt="${title}" title="${title}"></a>`;
-      }
-    // Visiting secondary language or other language page
-    } else {
-      pageTitleElem.appendChild(spanElem3);
-      const primaryLangElem = getFirstElemByClassName(`interlanguage-link interwiki-${primaryLang}`);
-      if (primaryLangElem) {
-        const { href, title } = primaryLangElem.lastChild;
-        spanElem3.innerHTML = ` <a href="${href}"><img src="${flagUrl}${flagLangCode[primaryLang]}.png" alt="${title}" title="${title}"></a>`;
+  // Function to add the image element inside the link
+  function addFlagImage(link, prop, popupMenu) {
+    if (!link.querySelector('img.flag-image')) {
+      const img = document.createElement('img');
+      img.src = getFlagUrl(prop);
+      img.alt = prop;
+      img.title = prop;
+      img.className = 'flag-image';
+      img.style.marginRight = '5px'; // Add 5px space between the image and text (adjust as needed)
+      img.style.marginLeft = '5px'; // Add 5px space between the image and text (adjust as needed)
+      if (popupMenu) {
+        const anchor = link.querySelector('a');
+        anchor.insertBefore(img, anchor.firstChild);
+      } else {
+        link.insertBefore(img, link.firstChild);
       }
     }
   }
+
+  // Function to apply flags to the language links
+  function applyFlagsToLanguageLinks(links, popupMenu) {
+    links.forEach(link => {
+      // Get the language code from the class name (e.g., 'interwiki-en' -> 'en')
+      const prop = link.className.match(/interwiki-(\w+)/)[1];
+      addFlagImage(link, prop, popupMenu);
+      // Add a flag-applied class to the link to mark that the flag has been added
+      link.classList.add('flag-applied');
+    });
+  }
+
+  // Find the initial language links and apply the flags
+  const initialLinks = document.querySelectorAll('.interlanguage-link:not(.flag-applied)');
+  applyFlagsToLanguageLinks(initialLinks);
+
+  // MutationObserver to detect the appearance of the button
+  const observer = new MutationObserver(mutationsList => {
+    const showMoreButton = document.querySelector('.mw-interlanguage-selector.mw-ui-button');
+    if (showMoreButton) {
+      showMoreButton.addEventListener('click', () => {
+        // Delay querying the language links to give time for them to be rendered
+        setTimeout(() => {
+          const additionalLinks = document.querySelectorAll('.interlanguage-uls-menu .interlanguage-link');
+          applyFlagsToLanguageLinks(additionalLinks, true);
+        }, 500); // Adjust the delay as needed based on the rendering time
+      });
+      // Stop observing once the button is found
+      observer.disconnect();
+    }
+  });
+
+  // Observe mutations in the document to detect the appearance of the button
+  observer.observe(document, { childList: true, subtree: true });
 
 })();
