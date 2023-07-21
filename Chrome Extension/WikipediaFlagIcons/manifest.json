@@ -1,28 +1,11 @@
 {
-  "manifest_version": 2,
-
+  "manifest_version": 3,
   "name": "Wikipedia Flag Icons",
-  "description": "Display flag icons to Wikipedia languages list on left sidebar.",
-  "version": "2.0",
-  "author": "Davide Violante",
-
-  "icons": {
-    "16": "icon16.png",
-    "48": "icon48.png",
-    "128": "icon128.png"
-  },
-
-  "background": {
-    "scripts": ["bg.js"]
-  },
-  "browser_action": {
-    "default_title": ""
-  },
+  "version": "3.0",
+  "description": "Display flag icons to Wikipedia languages list.",
   "permissions": [
-    "tabs",
-    "storage"
+    "activeTab"
   ],
-
   "content_scripts": [
     {
       "matches": [
@@ -37,15 +20,33 @@
         "*://*.wikiversity.org/*",
         "*://*.wikivoyage.org/*"
       ],
-      "js": ["wikipediaFlagIcons.js"]
+      "js": [
+        "content_script.js"
+      ]
     }
   ],
-
-  "options_page": "options.html",
-
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
   "web_accessible_resources": [
-    "flags/*.png",
-    "wikilangcode.png",
-    "wikipediaFlagIcons.js"
+    {
+      "resources": [
+        "images/flags/*.png"
+      ],
+      "matches": [
+        "*://*.wikipedia.org/*",
+        "*://*.wikimedia.org/*",
+        "*://*.wiktionary.org/*",
+        "*://*.wikibooks.org/*",
+        "*://*.wikidata.org/*",
+        "*://*.wikinews.org/*",
+        "*://*.wikiquote.org/*",
+        "*://*.wikisource.org/*",
+        "*://*.wikiversity.org/*",
+        "*://*.wikivoyage.org/*"
+      ]
+    }
   ]
 }

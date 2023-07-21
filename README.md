@@ -31,8 +31,5 @@ Wikipedia Main Page (EN) using the script:
 2. Download the userscript from [here](https://github.com/DavideViolante/Wikipedia-Flag-Icons/raw/master/Userscript/wikipediaFlagIcons.user.js);
 3. Drag and drop `wikipediaFlags.user.js` into your browser to install it.
  
-### Issues
-Open an issue if more flags can be added.
-
 ### License
 [![CC-BY-NC](http://i.creativecommons.org/l/by-nc/3.0/88x31.png)](https://en.wikipedia.org/wiki/Creative_Commons_license)
