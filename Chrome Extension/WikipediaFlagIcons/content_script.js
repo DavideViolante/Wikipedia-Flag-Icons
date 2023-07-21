@@ -49,18 +49,24 @@ function applyFlagsToLanguageLinks(links, popupMenu) {
 const initialLinks = document.querySelectorAll('.interlanguage-link:not(.flag-applied)');
 applyFlagsToLanguageLinks(initialLinks);
 
+const clickFn = () => {
+  // Delay querying the language links to give time for them to be rendered
+  setTimeout(() => {
+    const additionalLinks = document.querySelectorAll('.uls-language-list .interlanguage-link');
+    applyFlagsToLanguageLinks(additionalLinks, true);
+  }, 500);
+};
+
 // MutationObserver to detect the appearance of the button
 const observer = new MutationObserver(mutationsList => {
   const showMoreButton = document.querySelector('.mw-interlanguage-selector.mw-ui-button');
+  const showMoreButtonEn = document.querySelector('#p-lang-btn');
   if (showMoreButton) {
-    showMoreButton.addEventListener('click', () => {
-      // Delay querying the language links to give time for them to be rendered
-      setTimeout(() => {
-        const additionalLinks = document.querySelectorAll('.interlanguage-uls-menu .interlanguage-link');
-        applyFlagsToLanguageLinks(additionalLinks, true);
-      }, 500); // Adjust the delay as needed based on the rendering time
-    });
-    // Stop observing once the button is found
+    showMoreButton.addEventListener('click', clickFn);
+    observer.disconnect();
+  }
+  if (showMoreButtonEn) {
+    showMoreButtonEn.addEventListener('click', clickFn);
     observer.disconnect();
   }
 });
