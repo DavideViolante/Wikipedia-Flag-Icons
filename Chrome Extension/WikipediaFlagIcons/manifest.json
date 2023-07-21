@@ -3,9 +3,7 @@
   "name": "Wikipedia Flag Icons",
   "version": "3.0",
   "description": "Display flag icons to Wikipedia languages list.",
-  "permissions": [
-    "activeTab"
-  ],
+  "permissions": [],
   "content_scripts": [
     {
       "matches": [
