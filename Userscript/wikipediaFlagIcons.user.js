@@ -42,7 +42,7 @@ const flagUrl = 'https://github.com/DavideViolante/Wikipedia-Flag-Icons/raw/mast
 
   // Define a function to get the flag URL based on the language code
   function getFlagUrl(langCode) {
-    return chrome.runtime.getURL(`images/flags/${flagLangCode[langCode]}.png`);
+    return chrome.runtime.getURL(`${flagUrl}${flagLangCode[langCode]}.png`);
   }
 
   // Function to add the image element inside the link
@@ -79,18 +79,24 @@ const flagUrl = 'https://github.com/DavideViolante/Wikipedia-Flag-Icons/raw/mast
   const initialLinks = document.querySelectorAll('.interlanguage-link:not(.flag-applied)');
   applyFlagsToLanguageLinks(initialLinks);
 
+  const clickFn = () => {
+    // Delay querying the language links to give time for them to be rendered
+    setTimeout(() => {
+      const additionalLinks = document.querySelectorAll('.uls-language-list .interlanguage-link');
+      applyFlagsToLanguageLinks(additionalLinks, true);
+    }, 500);
+  };
+
   // MutationObserver to detect the appearance of the button
   const observer = new MutationObserver(mutationsList => {
     const showMoreButton = document.querySelector('.mw-interlanguage-selector.mw-ui-button');
+    const showMoreButtonEn = document.querySelector('#p-lang-btn');
     if (showMoreButton) {
-      showMoreButton.addEventListener('click', () => {
-        // Delay querying the language links to give time for them to be rendered
-        setTimeout(() => {
-          const additionalLinks = document.querySelectorAll('.interlanguage-uls-menu .interlanguage-link');
-          applyFlagsToLanguageLinks(additionalLinks, true);
-        }, 500); // Adjust the delay as needed based on the rendering time
-      });
-      // Stop observing once the button is found
+      showMoreButton.addEventListener('click', clickFn);
+      observer.disconnect();
+    }
+    if (showMoreButtonEn) {
+      showMoreButtonEn.addEventListener('click', clickFn);
       observer.disconnect();
     }
   });
